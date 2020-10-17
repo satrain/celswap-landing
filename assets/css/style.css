@@ -1,16 +1,41 @@
 @font-face {
+    font-family: Pangram-Black;
+    src: url(../fonts/Pangram-Black.otf);
+}
+
+@font-face {
+    font-family: Pangram-ExtraBold;
+    src: url(../fonts/Pangram-ExtraBold.otf);
+}
+
+@font-face {
     font-family: Pangram-Bold;
-    src: url(Pangram-Black.otf);
+    src: url(../fonts/Pangram-Bold.otf);
+}
+
+@font-face {
+    font-family: Pangram-Medium;
+    src: url(../fonts/Pangram-Medium.otf);
 }
 
 @font-face {
     font-family: Pangram-Regular;
-    src: url(Pangram-Regular.otf);
+    src: url(../fonts/Pangram-Regular.otf);
 }
 
 @font-face {
-    font-family: Pangram-ExtraLight;
-    src: url(Pangram-ExtraLight.otf);
+    font-family: Pangram-Light;
+    src: url(../fonts/Pangram-Light.otf);
+}
+
+@font-face {
+    font-family: QuincyCF-Medium;
+    src: url(../fonts/QuincyCF-Medium.otf);
+}
+
+@font-face {
+    font-family: QuincyCF-Text;
+    src: url(../fonts/QuincyCF-Text.otf);
 }
 
 * {
@@ -27,8 +52,13 @@ body {
 
 /* Universal classes */
 
+h1 {
+    font-family: 'Pangram-ExtraBold', sans-serif;
+}
+
 .btn {
-    
+    font-size: 20px;
+    font-family: 'Pangram-Medium', sans-serif;
     padding: 20px 39.5px;
     background: #0f1e6c;
     border: none;
@@ -134,9 +164,8 @@ header nav ul li a {
 }
 
 #hero .heading-section h1 {
-    font-family: 'Pangram-Bold', sans-serif;
-    font-weight: 800;
     font-size: 95px;
+    line-height: 1;
     color: #232a65;
     text-align: center;
 
@@ -146,22 +175,24 @@ header nav ul li a {
     -webkit-text-fill-color: transparent;
 }
 
-#hero .heading-section h1:nth-child(2) {
+#hero .heading-section h1 span {
+    font-family: 'QuincyCF-Medium', sans-serif;
     font-weight: 500;
 }
 
 #hero .heading-section h4 {
     font-size: 20px;
     font-weight: 400;
+    letter-spacing: 1.1px;
     color: #232a65;
     text-align: center;
 
-    background: linear-gradient(#3228B5 0%, #151A76 100%);
+    background: linear-gradient(270deg, #3228B5 0%, #151A76 100%);
     -webkit-background-clip: text;
             background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    margin-top: 10px;
+    margin-top: 15px;
     margin-bottom: 60px;
 }
 
@@ -175,26 +206,27 @@ header nav ul li a {
 }
 
 .cel-market-price p {
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 17px;
     color: #232a65;
 
     text-align: center;
 }
 
 .cel-market-price h3 {
+    font-family: 'Pangram-ExtraBold', sans-serif;
     font-size: 39px;
+    letter-spacing: 1.5px;
     font-weight: bold;
     color: #232a65;
     
     text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 2px;
+    margin-bottom: 5px;
 }
 
 .cel-market-price span {
+    font-family: 'Pangram-Medium', sans-serif;
     font-size: 16px;
-    font-weight: 700;
     color: #43b584;
 
     text-align: center;
@@ -219,7 +251,6 @@ header nav ul li a {
 
 .available h1 {
     font-size: 61px;
-    font-weight: 800;
     color: #763d16;
     line-height: 1.3;
 
@@ -227,8 +258,9 @@ header nav ul li a {
 }
 
 .available h1 span {
-    font-size: 61px;
+    font-family: 'QuincyCF-Medium', sans-serif;
     font-weight: 500;
+    font-size: 61px;
     color: #f6851b;
 }
 
@@ -257,6 +289,7 @@ header nav ul li a {
 }
 
 .coming-soon h1 span {
+    font-family: 'QuincyCF-Medium', sans-serif;
     font-size: 61px;
     font-weight: 500;
 }
@@ -269,7 +302,7 @@ header nav ul li a {
     font-size: 20px;
     font-weight: 400;
     color: #fff;
-    letter-spacing: 1.01;
+    letter-spacing: 1.1px;
 
     margin-top: 95px;
 }
@@ -286,6 +319,7 @@ header nav ul li a {
 }
 
 .about-typography {
+    font-family: 'Pangram-ExtraBold', sans-serif;
     position: absolute;
     right: 306px;
     top: 113px;
@@ -293,12 +327,12 @@ header nav ul li a {
 
     font-size: 180px;
     color: #5a6af5;
-    font-weight: bold;
 
-    background: linear-gradient(90deg, #3C32C1 0%, #161B7B 100%);
+    background: linear-gradient(270deg, #3C32C1 0%, #161B7B 100%);
     -webkit-background-clip: text;
             background-clip: text;
     -webkit-text-fill-color: transparent;
+    mix-blend-mode: multiply;
 
     opacity: 0.46;
 }
@@ -306,30 +340,35 @@ header nav ul li a {
 
 #about h1 {
     font-size: 61px;
-    line-height: 1.2;
+    line-height: 1.1;
     font-weight: 800;
     color: #fff;
 }
 
 #about h1 span {
+    font-family: 'QuincyCF-Medium', sans-serif;
     font-weight: 500;
 }
 
 #about h3 {
+    font-family: 'Pangram-Regular', sans-serif;
     font-size: 31px;
-    font-weight: 400;
+    font-weight: 500;
+    letter-spacing: 1.9px;
     color: #fff;
 
     margin-top: 35px;
 }
 
 #about p {
-    max-width: 507px;
+    font-family: 'Pangram-Light', sans-serif;
+    max-width: 520px;
     font-size: 16px;
     font-weight: 400;
+    letter-spacing: 1.2px;
     color: #fff;
 
-    margin-top: 42px;
+    margin-top: 48px;
 }
 
 
@@ -346,7 +385,7 @@ header nav ul li a {
 
 .what-is-content {
     position: relative;
-    width: 650px;
+    width: 666px;
     height: 650px;
     border-radius: 50%;
     
@@ -414,13 +453,13 @@ header nav ul li a {
     font-size: 61px;
     line-height: 1.2;
     color: #0f1e6c;
-    font-weight: 800;
 
     margin-top: 70px;
     margin-bottom: 34px;
 }
 
 .what-is-content h1 span {
+    font-family: 'QuincyCF-Medium', sans-serif;
     font-weight: 500;
 }
 
@@ -431,4 +470,50 @@ header nav ul li a {
     line-height: 1.3;
 
     text-align: center;
+}
+
+
+#prices {
+    width: 100vw;
+    background: #fff;
+    padding-top: 180px;
+}
+
+.prices-container {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding-left: 240px;
+    padding-right: 396px;
+}
+
+.prices-container h1 {
+    font-size: 61px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #0f1e6c;
+}
+
+.prices-container h1 span {
+    font-family: 'QuincyCF-Medium', sans-serif;
+    font-weight: 500;
+}
+
+.prices-container p {
+    max-width: 525px;
+    margin-top: 20px;
+
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1.3px;
+    color: #0f1e6c;
+
+}
+
+.prices-function span {
+    font-family: 'Pangram-Black', sans-serif;
+    font-size: 108px;
+    color: #3329ba;
 }
