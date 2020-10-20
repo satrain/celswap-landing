@@ -28,3 +28,19 @@ window.addEventListener("scroll", function () {
         celSwapLogo.classList.remove("celswap-logo-onscroll");
     }
 })
+
+let voteBtn = document.querySelector(".vote-btn")
+
+let voteBtnFire = document.querySelector(".vote-btn-fire")
+let voteBtnActive = document.querySelector(".vote-btn-fire-active")
+let votedBox = document.querySelector(".voted")
+
+voteBtn.addEventListener("click", function () {
+    voteBtn.style.background = "linear-gradient(45deg, #3228b5 0%, #151a76 100%)";
+    voteBtn.style.transition = ".7s";
+
+    votedBox.classList.add("animateVoted");
+
+    voteBtnFire.classList.remove("vote-btn-fire");
+    voteBtnFire.classList.add("vote-btn-fire-active");
+})
