@@ -65,19 +65,19 @@ document.addEventListener('DOMContentLoaded', function () {
     }).mount();
 
     const splide2 = new Splide('.splide-2', {
-        perPage: 4,
+        perPage: 3,
         type: 'loop',
         focus: 'center',
         pagination: false,
         arrows: false,
         drag: false,
         keyboard: false,
-        autoplay: true,
+        autoplay: false,
         interval: 0,
         easing: "linear",
         speed: 3000,
         pauseOnHover: false,
-        gap: "15em",
+        gap: "5em",
         breakpoints: {
             1024: {
                 perPage: 3
