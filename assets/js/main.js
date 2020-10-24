@@ -61,58 +61,92 @@ burger.onclick = function () {
 
 
 
-// Typography movement
-var _el = document.querySelector('.about-typography');
-let about = document.querySelector("#about");
-_el.addEventListener("mouseover", function () {
+// // Typography movement
+// var _el = document.querySelector('.about-typography');
+// let about = document.querySelector("#about");
+// _el.addEventListener("mouseover", function () {
 
-    _el.style.top = "0";
-    _el.style.left = "0";
-    about.addEventListener('mousemove', nutterbutter);
-    function nutterbutter(event) {
-        _el.style.top = event.clientY + "px";
-        _el.style.left = event.clientX + "px";
-    }
+//     _el.style.top = "0";
+//     _el.style.left = "0";
+//     about.addEventListener('mousemove', nutterbutter);
+//     function nutterbutter(event) {
+//         _el.style.top = event.clientY + "px";
+//         _el.style.left = event.clientX + "px";
+//     }
 
-})
+// })
 slider = document.querySelector(".prices-slider");
 slide = document.querySelectorAll(".slide");
 
 
+// button hover
+document.querySelectorAll(".btn")[0].onmousemove = e => {
+    const x = e.pageX - e.target.offsetLeft;
+    const y = e.pageY - e.target.offsetTop;
+
+    e.target.style.setProperty("--x", `${x}px`);
+    e.target.style.setProperty("--y", `${y}px`);
+};
+
+document.querySelectorAll(".btn-rates")[0].onmousemove = e => {
+    const x = e.pageX - e.target.offsetLeft;
+    const y = e.pageY - e.target.offsetTop;
+
+    e.target.style.setProperty("--x", `${x}px`);
+    e.target.style.setProperty("--y", `${y}px`);
+};
+
+document.querySelectorAll(".btn-rates")[1].onmousemove = e => {
+    const x = e.pageX - e.target.offsetLeft;
+    const y = e.pageY - e.target.offsetTop;
+
+    e.target.style.setProperty("--x", `${x}px`);
+    e.target.style.setProperty("--y", `${y}px`);
+};
 
 
-// fetch("https://api.celsius.network/api/v3/web/supported_currencies?fbclid=IwAR3T4QbarmtKZIKLdmrlqmXAup2j6b6OlE9hOPv6dbZzRnFgwgRIRCQkMo0")
-//     .then(result => result.json()).then(data => {
-//         let output = '';
-//         data.forEach(function (crypto) {
-//             if (crypto.name == "BTC" || crypto.name == "ETH" || crypto.name == "CEL" || crypto.name == "SNX") {
-//                 output += `
-//                     <li class="splide__slide">
-//                     <div class="rates-slide">
-//                         <div class="rates-slide-logo">
-//                             <div class="btc-logo"></div>
-//                             <span class="rates-slide-heading btc-heading">${crypto.name}</span>
-//                         </div>
-//                         <div class="rates-slide-value">
-//                             <div class="rates-value-cel">
-//                                 <span class="rates-value-cel-percentage">${(Math.pow(1 + (1 + 0.3) * crypto.interestRate / 52, 52) - 1).toFixed(4) * 100 + "%"}</span>
-//                                 <span class="in-cel">in CEL</span>
-//                             </div>
-//                             <div class="rates-value-in-kind">
-//                                 <span class="rates-value-in-kind-percentage">${(Math.pow(1 + (1 + 0) * crypto.interestRate / 52, 52) - 1).toFixed(4) * 100 + "%"}</span>
-//                                 <span class="in-kind">in-kind</span>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </li>
-//               `;
-//             }
-//         });
-//         document.querySelector("#splide02-list").innerHTML = output;
-//     })
-//     .catch(err => {
-//         console.log(err);
-//     });
+// Trim number to 2 decimals
+function upto2Decimal(num) {
+    if (num > 0)
+        return Math.floor(num * 100) / 100;
+    else
+        return Math.ceil(num * 100) / 100;
+}
+
+
+fetch("https://api.celsius.network/api/v3/web/supported_currencies?fbclid=IwAR3T4QbarmtKZIKLdmrlqmXAup2j6b6OlE9hOPv6dbZzRnFgwgRIRCQkMo0")
+    .then(result => result.json()).then(data => {
+        let output = '';
+        let i = 0;
+        const ratesSlide = document.querySelectorAll(".rates-li-slide");
+        data.forEach(function (crypto) {
+            if (crypto.name == "BTC" || crypto.name == "ETH" || crypto.name == "CEL" || crypto.name == "SNX" || crypto.name == "BUSD" || crypto.name == "UNI" || crypto.name == "DAI" || crypto.name == "USDT" || crypto.name == "USDC") {
+                output = `
+                            <div class="rates-slide">
+                            <div class="rates-slide-logo">
+                                <img src="assets/images/coins/${crypto.name}-icon.png">
+                                <span class="rates-slide-heading btc-heading">${crypto.name}</span>
+                            </div>
+                            <div class="rates-slide-value">
+                                <div class="rates-value-cel">
+                                    <span class="rates-value-cel-percentage">${upto2Decimal((Math.pow(1 + (1 + 0.3) * crypto.interestRate / 52, 52) - 1) * 100) + "%"}</span>
+                                    <span class="in-cel">in CEL</span>
+                                </div>
+                                <div class="rates-value-in-kind">
+                                <span class="rates-value-in-kind-percentage">${upto2Decimal((Math.pow(1 + (1 + 0) * crypto.interestRate / 52, 52) - 1) * 100) + "%"}</span>
+                                    <span class="in-kind">in-kind</span>
+                                </div>
+                            </div>
+                        </div>
+               `;
+                ratesSlide[i].innerHTML = output;
+                i++;
+            }
+        });
+    })
+    .catch(err => {
+        console.log(err);
+    });
 
 
 
@@ -125,22 +159,24 @@ slide = document.querySelectorAll(".slide");
 //     });
 
 
-fetch("https://api.celsius.network/api/v3/web/supported_currencies?fbclid=IwAR3T4QbarmtKZIKLdmrlqmXAup2j6b6OlE9hOPv6dbZzRnFgwgRIRCQkMo0")
-    .then(result => result.json()).then(data => {
-        let output = '';
-        let cryptoNames = [];
-        let aprValues = [];
-        data.forEach(function (crypto) {
-            if (crypto.name == "BTC" || crypto.name == "ETH" || crypto.name == "CEL" || crypto.name == "SNX") {
-                cryptoNames.push(crypto.name);
-                aprValues.push(crypto.interestRate);
-            }
-        });
-        for (let i = 0; i < cryptoNames.length; i++) {
-            document.querySelectorAll(".rates-slide-heading")[i].innerHTML = cryptoNames[i];
-            console.log(cryptoNames.length);
-        }
-    })
-    .catch(err => {
-        console.log(err);
-    });
+// fetch("https://api.celsius.network/api/v3/web/supported_currencies?fbclid=IwAR3T4QbarmtKZIKLdmrlqmXAup2j6b6OlE9hOPv6dbZzRnFgwgRIRCQkMo0")
+//     .then(result => result.json()).then(data => {
+//         let output = '';
+//         let cryptoNames = [];
+//         let aprValues = [];
+//         data.forEach(function (crypto) {
+//             if (crypto.name == "BTC" || crypto.name == "ETH" || crypto.name == "CEL" || crypto.name == "SNX") {
+//                 cryptoNames.push(crypto.name);
+//                 aprValues.push(crypto.interestRate);
+//             }
+//         });
+//         for (let i = 0; i < cryptoNames.length; i++) {
+//             document.querySelectorAll(".rates-slide-heading")[i].innerHTML = cryptoNames[i];
+//             console.log(cryptoNames.length);
+//         }
+//     })
+//     .catch(err => {
+//         console.log(err);
+//     });
+
+

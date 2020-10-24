@@ -71,6 +71,7 @@ h1 {
 }
 
 .btn {
+    position: relative;
     font-size: 20px;
     font-family: 'Pangram-Medium', sans-serif;
     padding: 20px 39.5px;
@@ -78,7 +79,35 @@ h1 {
     border: none;
     border-radius: 35.5px;
     color: #fff;
+
+    outline: none;
+    overflow: hidden;
 }
+
+#hero .btn::before {
+    --size: 0;
+    content: "";
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--size);
+    height: var(--size);
+    background: radial-gradient(circle closest-side, #4405f7, transparent);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    -webkit-transition: width 0.2s ease, height 0.2s ease;
+    transition: width 0.2s ease, height 0.2s ease;
+  }
+#hero .btn:hover::before {
+    --size: 400px;
+  }
+
+  #hero .btn span,
+  .btn-rates span {
+      position: relative;
+      pointer-events: none;
+      z-index: 5;
+  }
 
 .hidden {
     opacity: 0 !important;
@@ -1147,7 +1176,16 @@ background-size: 100% 100%;
     width: 238px;
     padding: 20px 26.5px;
     background: rgba(255, 255, 255, .3);
+    transition: .5s;
 }
+
+.btn-documentation:hover,
+.btn-github-repo:hover {
+    background: #fff;
+    color: #FF8400;
+    transition: .5s;
+}
+
 
 .icon-doc {
     display: block;
@@ -1168,6 +1206,17 @@ background-size: 100% 100%;
     background: url('../images/icn-github.svg');
     background-repeat: no-repeat;
     background-size: cover;
+    transition: .5s;
+}
+
+.btn-documentation:hover .icon-doc {
+    transform: scaleX(0);
+    transition: .5s;
+}
+
+.btn-github-repo:hover .icon-github {
+    transform: scaleX(0);
+    transition: .5s;
 }
 
 #vote {
@@ -1355,13 +1404,14 @@ background-size: 100% 100%;
 #rates {
     width: 100vw;
     padding-top: 160px;
+    padding-bottom: 247px;
     overflow: hidden;
 }
 
 #rates h1 {
     font-size: 61px;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 120px;
 
     color: #0f1e6c;
 
@@ -1397,7 +1447,7 @@ background-size: 100% 100%;
 
 .rates-slide {
     width: 243px;
-    height: 193px;
+    height: 213px;
 
     display: flex;
     flex-direction: column;
@@ -1405,11 +1455,19 @@ background-size: 100% 100%;
     align-items: center;
 }
 
+.rates-slide-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .rates-slide-heading {
     font-family: 'QuincyCF-Bold', sans-serif;
     font-size: 39px;
     color: #0f1e6c;
     font-weight: 700;
+    margin-top: 20px;
 }
 
 .rates-value-cel {
@@ -1461,6 +1519,63 @@ background-size: 100% 100%;
 .rates-value-in-kind {
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+#rates .splide__slide {
+    width: 270px !important;
+}
+
+.rates-buttons {
+    width: 100vw;
+    margin-top: 160px;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-appstore,
+.btn-googleplay {
+    width: 238px;
+    height: 71px;
+
+    background: #0f1e6c;
+    outline: none;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-appstore {
+    margin-right: 30px;
+}
+
+.icon-appstore {
+    display: block;
+    background: url('../images/icn-apple.png');
+}
+
+
+footer {
+    width: 100vw;
+    background: #fbf6ef;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 40px 240px 50px;
+}
+
+.footer-social-media {
+    width: 280px;
+    
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -1845,6 +1960,36 @@ background-size: 100% 100%;
         font-size: 31px;
     }
 
+    .rates-buttons {
+        flex-direction: column;
+    }
+
+    .btn-appstore {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    footer {
+        width: 100vw;
+        background: #fbf6ef;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    
+        padding: 40px 30px 50px;
+    }
+    
+    .footer-social-media {
+        width: 280px;
+        margin-top: 50px;
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
 }
 
 @media screen and (max-width: 950px) {
@@ -1920,7 +2065,7 @@ background-size: 100% 100%;
     }
 }
 
-@media (min-width: 350px) and (max-width: 420px) {
+@media (min-width: 320px) and (max-width: 420px) {
 
     h1,
     h1 span {

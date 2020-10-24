@@ -99,7 +99,7 @@
 
             <h4>One of the fastest-growing tokens on the market</h4>
 
-            <button class="btn">Launch CelSwap</button>
+            <button class="btn"><span>Launch CelSwap</span></button>
 
             <div class="cel-market-price">
                 <p>CEL Market Price</p>
@@ -397,164 +397,45 @@
         </h1>
 
 
-        <div class="splide splide-2">
+        <div class="splide splide-container splide-2">
             <div class="splide__track">
-                <ul class="splide__list">
-                    <li class="splide__slide">
-                        <div class="rates-slide">
-                            <div class="rates-slide-logo">
-                                <div class="btc-logo"></div>
-                                <span class="rates-slide-heading btc-heading"></span>
-                            </div>
-                            <div class="rates-slide-value">
-                                <div class="rates-value-cel">
-                                    <span class="rates-value-cel-percentage">9.65%</span>
-                                    <span class="in-cel">in CEL</span>
-                                </div>
-                                <div class="rates-value-in-kind">
-                                    <span class="rates-value-in-kind-percentage">7.06%</span>
-                                    <span class="in-kind">in-kind</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="rates-slide">
-                            <div class="rates-slide-logo">
-                                <div class="btc-logo"></div>
-                                <span class="rates-slide-heading btc-heading"></span>
-                            </div>
-                            <div class="rates-slide-value">
-                                <div class="rates-value-cel">
-                                    <span class="rates-value-cel-percentage">9.65%</span>
-                                    <span class="in-cel">in CEL</span>
-                                </div>
-                                <div class="rates-value-in-kind">
-                                    <span class="rates-value-in-kind-percentage">7.06%</span>
-                                    <span class="in-kind">in-kind</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="rates-slide">
-                            <div class="rates-slide-logo">
-                                <div class="btc-logo"></div>
-                                <span class="rates-slide-heading btc-heading"></span>
-                            </div>
-                            <div class="rates-slide-value">
-                                <div class="rates-value-cel">
-                                    <span class="rates-value-cel-percentage">9.65%</span>
-                                    <span class="in-cel">in CEL</span>
-                                </div>
-                                <div class="rates-value-in-kind">
-                                    <span class="rates-value-in-kind-percentage">7.06%</span>
-                                    <span class="in-kind">in-kind</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="rates-slide">
-                            <div class="rates-slide-logo">
-                                <div class="btc-logo"></div>
-                                <span class="rates-slide-heading btc-heading"></span>
-                            </div>
-                            <div class="rates-slide-value">
-                                <div class="rates-value-cel">
-                                    <span class="rates-value-cel-percentage">9.65%</span>
-                                    <span class="in-cel">in CEL</span>
-                                </div>
-                                <div class="rates-value-in-kind">
-                                    <span class="rates-value-in-kind-percentage">7.06%</span>
-                                    <span class="in-kind">in-kind</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="rates-slide">
-                            <div class="rates-slide-logo">
-                                <div class="btc-logo"></div>
-                                <span class="rates-slide-heading btc-heading">Matic</span>
-                            </div>
-                            <div class="rates-slide-value">
-                                <div class="rates-value-cel">
-                                    <span class="rates-value-cel-percentage">9.65%</span>
-                                    <span class="in-cel">in CEL</span>
-                                </div>
-                                <div class="rates-value-in-kind">
-                                    <span class="rates-value-in-kind-percentage">7.06%</span>
-                                    <span class="in-kind">in-kind</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="rates-slide">
-                            <div class="rates-slide-logo">
-                                <div class="btc-logo"></div>
-                                <span class="rates-slide-heading btc-heading">Uniswap</span>
-                            </div>
-                            <div class="rates-slide-value">
-                                <div class="rates-value-cel">
-                                    <span class="rates-value-cel-percentage">9.65%</span>
-                                    <span class="in-cel">in CEL</span>
-                                </div>
-                                <div class="rates-value-in-kind">
-                                    <span class="rates-value-in-kind-percentage">7.06%</span>
-                                    <span class="in-kind">in-kind</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="rates-slide">
-                            <div class="rates-slide-logo">
-                                <div class="btc-logo"></div>
-                                <span class="rates-slide-heading btc-heading">BUSD</span>
-                            </div>
-                            <div class="rates-slide-value">
-                                <div class="rates-value-cel">
-                                    <span class="rates-value-cel-percentage">9.65%</span>
-                                    <span class="in-cel">in CEL</span>
-                                </div>
-                                <div class="rates-value-in-kind">
-                                    <span class="rates-value-in-kind-percentage">7.06%</span>
-                                    <span class="in-kind">in-kind</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="rates-slide">
-                            <div class="rates-slide-logo">
-                                <div class="btc-logo"></div>
-                                <span class="rates-slide-heading btc-heading">Dai</span>
-                            </div>
-                            <div class="rates-slide-value">
-                                <div class="rates-value-cel">
-                                    <span class="rates-value-cel-percentage">9.65%</span>
-                                    <span class="in-cel">in CEL</span>
-                                </div>
-                                <div class="rates-value-in-kind">
-                                    <span class="rates-value-in-kind-percentage">7.06%</span>
-                                    <span class="in-kind">in-kind</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li> 
+                <ul id="splide--container" class="splide__list">
+                    <li class="splide__slide rates-li-slide"></li>
+                    <li class="splide__slide rates-li-slide"></li>
+                    <li class="splide__slide rates-li-slide"></li>
+                    <li class="splide__slide rates-li-slide"></li>
+                    <li class="splide__slide rates-li-slide"></li>
+                    <li class="splide__slide rates-li-slide"></li>
+                    <li class="splide__slide rates-li-slide"></li>
+                    <li class="splide__slide rates-li-slide"></li>
+                    <li class="splide__slide rates-li-slide"></li>
                 </ul>
             </div>
         </div>
 
+        <div class="rates-buttons">
+            <button class="btn btn-rates btn-appstore"><img src="assets/images/icn-apple.svg" alt=""><span>AppleStore</span></button>
+            <button class="btn btn-rates btn-googleplay"><img src="assets/images/icn-playstore.svg" alt=""><span>Google Play</span></button>
+        </div>
 
     </div>
 
+    <footer>
+        <div class="footer-contact">Drop us a line at <u><strong>weare@celswap.org</strong></u></div>
+        <div class="footer-social-media">
+            <img src="assets/images/icn-twitter.svg" alt="">
+            <img src="assets/images/icn-fb.svg" alt="">
+            <img src="assets/images/icn-ig.png" alt="">
+            <img src="assets/images/icn-telegram.png" alt="" style="width: 26.17px; height: 22px;">
+            <img src="assets/images/icn-yt.png" alt="">
+            <span>FAQ</span>
+        </div>
+    </footer>
 
-    <script src="assets/js/splideSlider.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/testimonials-slider.js"></script>
+    <script src="assets/js/splideSlider.js"></script>
+
 </body>
 
 </html>

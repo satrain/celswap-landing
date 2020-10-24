@@ -36,6 +36,30 @@ document.addEventListener('DOMContentLoaded', function () {
             876: {
                 perPage: 2,
                 gap: "5em"
+            },
+
+            750: {
+                perPage: 2,
+                gap: "15em"
+            },
+
+            600: {
+                perPage: 2,
+                gap: "25em"
+            },
+
+            420: {
+                perPage: 1,
+                gap: "2em"
+            },
+
+            375: {
+                perPage: 1,
+                gap: "3em"
+            },
+
+            360: {
+                gap: "5em"
             }
         }
     }).mount();
@@ -53,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
         easing: "linear",
         speed: 3000,
         pauseOnHover: false,
-        gap: "10em",
+        gap: "15em",
         breakpoints: {
             1024: {
                 perPage: 3
