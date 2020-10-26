@@ -1,11 +1,4 @@
-<?php 
-    $user = "root";
-    $pass = "";
-    $conn = new PDO("mysql:host=localhost;dbname=celswap;", $user, $pass);
-
-    $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-?>
-
+<?php include 'inc/dbh.inc.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,9 +14,14 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <!-- Animation on scroll - AOS - Library -->
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script>
-        $(document).ready(function() {
-            $(".vote-form").submit(function(event) {
+        $(document).ready(function () {
+            $(".vote-form").submit(function (event) {
                 event.preventDefault();
                 var voteBtn = $(".input-vote-btn").val();
 
@@ -36,7 +34,7 @@
 </head>
 
 <body>
-    <header>
+    <header data-aos="fade-right" data-aos-duration="1000" data-aos-easing="linear">
         <div class="celswap-logo celswap-logo-mobile"></div>
         <nav>
             <ul>
@@ -87,7 +85,7 @@
         </nav>
     </div>
 
-    <div id="hero">
+    <div id="hero" data-aos="fade-right" data-aos-duration="1000" data-aos-easing="linear">
         <div class="bubble1"></div>
         <div class="bubble2"></div>
         <div class="bubble3"></div>
@@ -111,42 +109,47 @@
 
     <div id="availability">
         <div class="available">
-            <h1>Available for<br><span>Metamask</span></h1>
-            <img src="assets/images/logo-metamask-fox.svg" alt="Metamask Fox">
+            <h1 data-aos="fade-right" data-aos-duration="1000">Available for<br><span>Metamask</span></h1>
+            <img src="assets/images/logo-metamask-fox.svg" alt="Metamask Fox" data-aos="fade-in"
+                data-aos-duration="1000">
         </div>
         <div class="coming-soon">
-            <h1>Coming soon for<br><span>Celsius Wallet</span></h1>
-            <img src="assets/images/logo-cel-standalone.svg" alt="Celsius Wallet">
-            <h4>(as well as Coinbase, Wallet Connect, Fortmatic...)</h4>
+            <h1 data-aos="fade-left" data-aos-duration="1000">Coming soon for<br><span>Celsius Wallet</span></h1>
+            <img src="assets/images/logo-cel-standalone.svg" alt="Celsius Wallet" data-aos="fade-in"
+                data-aos-duration="1000">
+            <h4 data-aos="fade-in" data-aos-duration="500">(as well as Coinbase, Wallet Connect, Fortmatic...)</h4>
         </div>
     </div>
 
     <div id="about">
-        <span class="about-typography">about</span>
+        <span class="about-typography" data-aos="fade-left" data-aos-duration="3000">about</span>
 
-        <h1>By the community
+        <h1 data-aos="fade-right" data-aos-duration="1000">By the community
             <br>
             <span>for the community</span>
         </h1>
-        <h3>Swap coins via CEL coin
+        <h3 data-aos="fade-right" data-aos-duration="1000">Swap coins via CEL coin
             <br>
             pairs trustlessly</h3>
-        <p>Cel swap is the community effort to make swapping CEL tokens easy for everyone. Increasing your loyalty level
+        <p data-aos="fade-right" data-aos-duration="1000">Cel swap is the community effort to make swapping CEL tokens
+            easy for everyone. Increasing your loyalty level
             and getting the best reward rates has never been this easy.</p>
     </div>
 
     <div id="what-is">
-        <div class="outside-small-bubble"></div>
-        <div class="medium-bubble"></div>
+        <div class="outside-small-bubble" data-aos="zoom-in" data-aos-duration="500"></div>
+        <div class="medium-bubble" data-aos="zoom-in" data-aos-duration="1500"></div>
         <div class="what-is-content">
-            <div class="small-bubble"></div>
-            <div class="large-bubble"></div>
-            <div class="big-bubble"></div>
-            <h1>What is
+            <div class="small-bubble" data-aos="zoom-in" data-aos-duration="1500"></div>
+            <div class="large-bubble" data-aos="zoom-in" data-aos-duration="2000"></div>
+            <div class="big-bubble" data-aos="zoom-in" data-aos-duration="1000"></div>
+            <h1 data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">What is
                 <br>
                 <span>CelSwap?</span>
             </h1>
-            <p>There is no order book or a centralized entity determining the price of assets. Instead CelSwap
+            <p data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">There is no order book or a centralized
+                entity determining
+                the price of assets. Instead CelSwap
                 <strong>utilizes
                     smart contracts to create liquidity pools and enable swapping tokens.</strong>
                 <br><br>
@@ -158,16 +161,17 @@
     <div id="prices">
         <div class="prices-container">
             <div class="prices-heading">
-                <h1>How are prices
+                <h1 data-aos="fade-up" data-aos-duration="1000">How are prices
                     <br>
                     <span>determined?</span>
                 </h1>
-                <p>Liquidity pools are routed through CEL tokens meaning one of the coins in the pair has to be CEL. In
+                <p data-aos="fade-up" data-aos-duration="1000">Liquidity pools are routed through CEL tokens meaning one
+                    of the coins in the pair has to be CEL. In
                     essence each pool is a simple function x*y=k. The function maintains the price in which the trade
                     can
                     happen.</p>
             </div>
-            <div class="prices-function">
+            <div class="prices-function" data-aos="fade-up" data-aos-duration="1000">
                 <span>x*y=k</span>
             </div>
         </div>
@@ -347,28 +351,34 @@
     </div>
 
     <div id="developers">
-        <span class="developers-typography">developers</span>
-        <h1>Celsians
+        <span class="developers-typography" data-aos="fade-right" data-aos-duration="3000">developers</span>
+        <h1 data-aos="fade-right" data-aos-duration="1000">Celsians
             <br>
             <span>to Celsians</span>
         </h1>
-        <h3>We are a small team of Celsians dedicated to giving back to the community!</h3>
-        <p>We are always looking for more like-minded developers to give back to the community. Join us and help give
+        <h3 data-aos="fade-right" data-aos-duration="1000">We are a small team of Celsians dedicated to giving back to
+            the community!</h3>
+        <p data-aos="fade-right" data-aos-duration="1000">We are always looking for more like-minded developers to give
+            back to the community. Join us and help give
             back at <span>weare@celswap.org</span></p>
         <div class="developers-links">
-            <button class="btn btn-documentation"><span class="icon-doc"></span>Documentation</button>
-            <button class="btn btn-github-repo"><span class="icon-github"></span> GitHub Repo</button>
+            <button class="btn btn-documentation" data-aos="fade-up" data-aos-duration="700"><span
+                    class="icon-doc"></span>Documentation</button>
+            <button class="btn btn-github-repo" data-aos="fade-up" data-aos-duration="1000"><span
+                    class="icon-github"></span> GitHub Repo</button>
         </div>
     </div>
 
     <div id="vote">
-        <h1>Would you like to see
+        <h1 data-aos="fade-up" data-aos-duration="1000">Would you like to see
             <br>
             <span>CelSwap in-app?</span>
         </h1>
-        <h3>Press the big button below to make your vote count. We'll make sure this idea reaches Celsius developers!
+        <h3 data-aos="fade-up" data-aos-duration="1000">Press the big button below to make your vote count. We'll make
+            sure this idea reaches Celsius developers!
         </h3>
-        <form class="vote-form" action="inc/vote-form.inc.php" method="post">
+        <form class="vote-form" action="inc/vote-form.inc.php" method="post" data-aos="zoom-out-up"
+            data-aos-duration="1000">
             <button class="input-vote-btn" name="vote">
                 <div class="votes">
                     <div class="voted">+1</div>
@@ -414,8 +424,10 @@
         </div>
 
         <div class="rates-buttons">
-            <button class="btn btn-rates btn-appstore"><img src="assets/images/icn-apple.svg" alt=""><span>AppleStore</span></button>
-            <button class="btn btn-rates btn-googleplay"><img src="assets/images/icn-playstore.svg" alt=""><span>Google Play</span></button>
+            <button class="btn btn-rates btn-appstore"><img src="assets/images/icn-apple.svg"
+                    alt=""><span>AppleStore</span></button>
+            <button class="btn btn-rates btn-googleplay"><img src="assets/images/icn-playstore.svg" alt=""><span>Google
+                    Play</span></button>
         </div>
 
     </div>
@@ -432,9 +444,14 @@
         </div>
     </footer>
 
+
     <script src="assets/js/main.js"></script>
     <script src="assets/js/testimonials-slider.js"></script>
     <script src="assets/js/splideSlider.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
 
 </body>
 
