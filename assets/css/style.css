@@ -1526,6 +1526,14 @@ background-size: 100% 100%;
     width: 270px !important;
 }
 
+#splide--container {
+    transform: translateX(120.3334px) !important;
+}
+
+#splide--container .rates-li-slide {
+    margin-right: 90px !important;
+}
+
 .rates-buttons {
     width: 100vw;
     margin-top: 160px;
