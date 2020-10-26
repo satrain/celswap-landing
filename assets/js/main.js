@@ -61,20 +61,6 @@ burger.onclick = function () {
 
 
 
-// // Typography movement
-// var _el = document.querySelector('.about-typography');
-// let about = document.querySelector("#about");
-// _el.addEventListener("mouseover", function () {
-
-//     _el.style.top = "0";
-//     _el.style.left = "0";
-//     about.addEventListener('mousemove', nutterbutter);
-//     function nutterbutter(event) {
-//         _el.style.top = event.clientY + "px";
-//         _el.style.left = event.clientX + "px";
-//     }
-
-// })
 slider = document.querySelector(".prices-slider");
 slide = document.querySelectorAll(".slide");
 
@@ -114,6 +100,7 @@ function upto2Decimal(num) {
 }
 
 
+// API
 fetch("https://api.celsius.network/api/v3/web/supported_currencies?fbclid=IwAR3T4QbarmtKZIKLdmrlqmXAup2j6b6OlE9hOPv6dbZzRnFgwgRIRCQkMo0")
     .then(result => result.json()).then(data => {
         let output = '';
