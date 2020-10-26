@@ -1113,7 +1113,7 @@ background-size: 100% 100%;
     font-size: 180px;
     text-transform: uppercase;
     color: #f7b95a;
-    opacity: 0.27;
+    opacity: 0.27 !important;
     background: linear-gradient(45deg, #f76c1d 0%, #f7c664 100%);
     -webkit-background-clip: text;
             background-clip: text;
